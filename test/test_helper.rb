@@ -1,5 +1,4 @@
 require 'java'
-require 'rubygems'
 require 'spec'
 require 'bigdecimal'
 require 'ribs'
