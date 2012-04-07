@@ -4,3 +4,5 @@ pkg
 derby.log
 examples/blog
 doc
+.idea
+*.iml
