@@ -1,6 +1,4 @@
-source "https://rubygems.org"
+source :rubygems
 
-gem "jruby-openssl"
-gem "rake"
-gem "rspec", "~> 1.2"
+gemspec
 

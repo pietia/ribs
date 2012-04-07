@@ -1,4 +1,3 @@
-require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'spec/rake/spectask'
 
@@ -23,7 +22,7 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.libs << "lib"
   t.spec_files = FileList['test/**/*_spec.rb']
   t.verbose = true
-  t.spec_opts = ["-fs", "--color"]
+  t.spec_opts = %w(--colour)
 end
 
 task :spec => [:ant]
@@ -37,25 +36,3 @@ Rake::RDocTask.new do |task|
   task.rdoc_files.include('README', 'lib/**/*.rb')
 end
 
-specification = Gem::Specification.new do |s|
-  s.name   = "ribs"
-  s.summary = "Ribs wraps Hibernate, to provide a good ORM for JRuby"
-  s.version = "0.0.3"
-  s.author = 'Ola Bini'
-  s.description = s.summary
-  s.homepage = 'http://ribs.rubyforge.org'
-  s.rubyforge_project = 'ribs'
-
-  s.has_rdoc = true
-  s.extra_rdoc_files = ['README']
-  s.rdoc_options << '--title' << 'ribs' << '--main' << 'README' << '--line-numbers'
-
-  s.email = 'ola.bini@gmail.com'
-  s.files = FileList['{lib,test}/**/*.{rb,jar}', '[A-Z]*$', 'Rakefile'].to_a
-#  s.add_dependency('mocha', '>= 0.5.5')
-end
-
-Rake::GemPackageTask.new(specification) do |package|
-  package.need_zip = false
-  package.need_tar = false
-end
