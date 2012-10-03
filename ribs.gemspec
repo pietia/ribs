@@ -15,7 +15,10 @@ Gem::Specification.new do |s|
   s.rdoc_options << '--title' << 'ribs' << '--main' << 'README' << '--line-numbers'
 
   s.email = 'ola.bini@gmail.com'
-  s.files =  %w(Rakefile) + `git ls-files lib test`.split('\n')
+
+  s.files         = `git ls-files`.split($\) + %w(lib/ribs.jar)
+  s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
 
   s.platform          = 'jruby'
   s.require_path      = 'lib'

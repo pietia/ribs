@@ -8,3 +8,4 @@ doc
 *.iml
 .jbundler/
 ext/ribs/target
+blog/
