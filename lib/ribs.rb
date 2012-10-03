@@ -1,20 +1,12 @@
 require 'java'
 
+Bundler.require
+
 # Force logging to a lower level
 lm = java.util.logging.LogManager.log_manager
 lm.logger_names.each do |ln|
   lm.get_logger(ln).set_level(java.util.logging.Level::SEVERE)
 end
-
-# Everything needed for Hibernate
-require 'antlr-2.7.6.jar'
-require 'commons-collections-3.1.jar'
-require 'dom4j-1.6.1.jar'
-require 'javassist-3.4.GA.jar'
-require 'jta-1.1.jar'
-require 'slf4j-api-1.5.2.jar'
-require 'slf4j-jdk14-1.5.2.jar'
-require 'hibernate3.jar'
 
 # Java parts of Ribs
 require 'ribs.jar'

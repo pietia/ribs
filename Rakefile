@@ -1,13 +1,6 @@
 require 'rake/rdoctask'
 require 'spec/rake/spectask'
 
-task :ant do 
-  ret = system('ant')
-  if !ret
-    raise "Compilation error"
-  end
-end
-
 task :default => [:spec]
 task :test => [:spec]
 
@@ -24,8 +17,6 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.verbose = true
   t.spec_opts = %w(--colour)
 end
-
-task :spec => [:ant]
 
 desc 'Generate RDoc'
 Rake::RDocTask.new do |task|

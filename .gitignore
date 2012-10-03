@@ -6,3 +6,5 @@ examples/blog
 doc
 .idea
 *.iml
+.jbundler/
+ext/ribs/target

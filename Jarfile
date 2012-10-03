@@ -1,0 +1,10 @@
+jar 'org.apache.derby:derby',    '10.8.1.2'
+jar 'antlr:antlr',               '2.7.6'
+jar 'dom4j:dom4j',               '1.6.1'
+jar 'javassist:javassist',       '3.4.GA'
+jar 'javax.transaction:jta',     '1.1'
+jar 'org.slf4j:slf4j-api',       '1.5.2'
+jar 'org.slf4j:slf4j-jdk14',     '1.5.2'
+jar 'org.hibernate:hibernate-core',   '3.3.0.GA'
+jar 'commons-collections:commons-collections', '3.1'
+
